@@ -16,6 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from persona_app import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # persona_app URLS
+
+    path('list/', views.task_list),
+    path('details/<int:id>/', views.task_details),
+    path('create/', views.task_create),
+
 ]
