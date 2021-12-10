@@ -18,7 +18,12 @@ def persona_create(request):
 
 # views to saw detail of a new persona
 def persona_details(request, id):
-    return HttpResponse(f'Détails d\'un persona id : {id}')
+    person = Persona.objects.get(id=id)
+    context = {
+        'person_details': person
+    }
+    print(context)
+    return render(request, 'persona_app/persona_details.html', context)
 
 # generae by randomuser a new persona
 def generate_persona(request):
