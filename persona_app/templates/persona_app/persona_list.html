@@ -2,6 +2,7 @@
 {% block title %}Liste of peoples{% endblock title %}
 
 {% block content %}
+<p class="h1">List of peoples :</p>
 <ul>
     {% for persona in personas %}
         <li>
@@ -9,5 +10,5 @@
         </li>
     {% endfor %}
 </ul>
-<a href="{% url 'persona_generate' %}">Generate a new persona</a>
+<a class="bg-success text-dark p-2 m-2" href="{% url 'persona_generate' %}">Generate a new persona</a>
 {% endblock content %}
