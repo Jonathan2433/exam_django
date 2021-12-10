@@ -1,1 +1,7 @@
 {% extends 'base.html' %} {% block title %}Persona details{% endblock title %}
+{% block content %}
+<a href="{% url 'url_list' %}">Retour à la liste</a>
+<ul>
+  <li>First_name : {{ persona_details.firts_name }}</li>
+</ul>
+{% endblock content %}
