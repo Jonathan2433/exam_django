@@ -19,3 +19,7 @@ def persona_create(request):
 # views to saw detail of a new persona
 def persona_details(request, id):
     return HttpResponse(f'Détails d\'un persona id : {id}')
+
+# generae by randomuser a new persona
+def generate_persona(request):
+    return HttpResponse(f'Géneration d\'un persona via randomuser')
