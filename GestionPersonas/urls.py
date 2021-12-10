@@ -22,9 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # persona_app URLS
-    path('/', views.task_list),
-    path('list/', views.task_list),
-    path('details/<int:id>/', views.task_details),
-    path('create/', views.task_create),
+    path('', views.persona_list),
+    path('list/', views.persona_list),
+    path('details/<int:id>/', views.persona_details),
+    path('create/', views.persona_create),
 
 ]
