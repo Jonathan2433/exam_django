@@ -3,6 +3,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import Persona
+import requests
+import json
+
+
 
 # views to saw LIST of personas
 def persona_list(request):
@@ -27,4 +31,43 @@ def persona_details(request, id):
 
 # generae by randomuser a new persona
 def generate_persona(request):
-    return HttpResponse(f'Géneration d\'un persona via randomuser')
+    # API Call
+    res = requests.get('https://randomuser.me/api?nat=fr')
+    jsonRes = res.json()
+    print('-------------------------------------------')
+    print(res)
+    print('-------------------------------------------')
+    data = jsonRes['results'][0]
+    gender = data['gender']
+    first_name = data['name']['first']
+    last_name = data['name']['last']
+    address_street = data['location']['street']['name']
+    address_number = data['location']['street']['number']
+    city = data['location']['city']
+    country = data['location']['country']
+    postcode = data['location']['postcode']
+    email = data['email']
+    username = data['login']['username']
+    password = data['login']['password']
+    age = data['dob']['age']
+    picture = data['picture']['thumbnail']
+     
+    if res:
+        print('ok mon pote')
+    else:
+        print('pas bon poto')
+        
+    
+
+
+    return HttpResponse('hola')
+
+
+
+
+
+
+
+
+    # return HttpResponse(f'Géneration d\'un persona via randomuser')
+    

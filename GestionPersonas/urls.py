@@ -23,8 +23,8 @@ urlpatterns = [
 
     # persona_app URLS
     path('', views.persona_list, name="url_list"),
-    path('list/', views.persona_list),
+    path('list/', views.persona_list, name="url_list"),
     path('details/<int:id>/', views.persona_details, name='persona_details'),
     path('create/', views.persona_create),
-    path('generate/', views.generate_persona),
+    path('generate/', views.generate_persona, name='persona_generate'),
 ]
