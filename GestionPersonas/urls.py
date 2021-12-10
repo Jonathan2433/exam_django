@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # persona_app URLS
-    path('', views.persona_list),
+    path('', views.persona_list, name="url_list"),
     path('list/', views.persona_list),
     path('details/<int:id>/', views.persona_details),
     path('create/', views.persona_create),
