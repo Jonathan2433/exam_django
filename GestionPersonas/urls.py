@@ -24,7 +24,6 @@ urlpatterns = [
     # persona_app URLS
     path('', views.persona_list),
     path('list/', views.persona_list),
-    path('details/<int:id>/', views.persona_details),
+    path('detail/<int:id>/', views.persona_details),
     path('create/', views.persona_create),
-
 ]

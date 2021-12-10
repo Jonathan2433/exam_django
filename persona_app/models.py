@@ -15,5 +15,5 @@ class Persona(models.Model):
     age = models.PositiveIntegerField()
     picture = models.CharField(max_length=50)
 
-    def __str__(self):
-        return str(self.id), self.first_name, self.last_name, 
+    # def __str__(self):
+    #     return str(self.id), self.first_name, self.last_name, 
